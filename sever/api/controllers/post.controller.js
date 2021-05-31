@@ -25,7 +25,7 @@ class PostController {
                     $in: [catname],
                 }})
             }else{
-                posts= await postModel.findById(req.params.id);
+                posts= await postModel.find();
             }
             res.status(200).json(posts);
         } catch (error) {
