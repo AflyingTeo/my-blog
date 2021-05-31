@@ -4,7 +4,7 @@ const PostsModel = require('../models/Post.model');
 
 class UserController {
     //[GET] /:id
-    async getUser(req, res, next) {
+    async userGet(req, res, next) {
         try {
             const user = await UserModel.findById(req.params.id);
             const { password, ...other } = user._doc;
@@ -41,7 +41,7 @@ class UserController {
     }
 
     //[DELETE] /:id
-    async userUpdate(req, res, next) {
+    async userDelete(req, res, next) {
         if (req.body.userId === req.params.id) {
             try {
                 const user = UserModel.findById(req.params.id);
