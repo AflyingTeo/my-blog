@@ -1,13 +1,17 @@
 import React from 'react';
-import Header from '../../header/header';
-
+import Header from '../../components/header/header';
+import Posts from '../../components/posts/posts';
+import SideBar from '../../components/sidebar/sidebar';
 import './home.css';
 
 export default function home() {
     return (
-        <div className="home">
+        <>
             <Header />
-            Home Page
-        </div>
+            <div className="home">
+                <Posts />
+                <SideBar />
+            </div>
+        </>
     )
 }

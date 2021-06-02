@@ -8,6 +8,7 @@
     font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
+    z-index: 2210;
 }
 .top-icon{
     margin: 8px;
@@ -26,6 +27,7 @@
     height: 40px;
     background-color: white;
     border-radius: 50%;
+    margin-right: 16px;
 }
 .top-center{
     flex: 6;
