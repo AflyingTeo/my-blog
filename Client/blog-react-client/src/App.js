@@ -6,10 +6,10 @@ import Write from './pages/write/write';
 import Setting from './pages/setting/setting';
 import Login from './pages/login/login';
 import Register from './pages/register/register';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-  const user = false;
+  const user = true;
   return (
     <Router>
       <TopBar />

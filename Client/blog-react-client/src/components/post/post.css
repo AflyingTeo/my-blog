@@ -43,3 +43,9 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+.post-view-detail{
+    margin-top: 8px;
+    font-size: 12px;
+    color: lightskyblue;
+    cursor: pointer;
+}

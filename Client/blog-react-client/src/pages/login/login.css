@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(top to right, black, white);
+    /* background: linear-gradient(top to right, black, white); */
     background-size: cover;
 }
 .login-form{

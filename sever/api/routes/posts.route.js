@@ -9,5 +9,9 @@ router.post('/create', postController.postCreate);
 router.put('/:id', postController.postUpdate);
 //DELETE POST
 router.delete('/:id', postController.postDelete);
+//GET SIGLE POST
+router.get('/:id', postController.postSingleGet);
+//GET POST
+router.get('/', postController.postGet);
 
 module.exports = router;

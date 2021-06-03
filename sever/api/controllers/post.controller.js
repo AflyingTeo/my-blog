@@ -11,10 +11,19 @@ class PostController {
             res.status(500).json(error)
         }
     }
-    //[GET] /:id
+    async postSingleGet(req, res, next){
+        try {
+            const singlePost = await postModel.findOne({_id: req.params.id})
+            res.status(200).json(singlePost);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    }
+    //[GET]
     async postGet(req, res, next) {
         const username = req.query.user;
         const catname = req.query.cat;
+        const postId = req.params.id;
 
         try {
             let posts;
@@ -24,6 +33,8 @@ class PostController {
                 posts = await postModel.find({categories: {
                     $in: [catname],
                 }})
+            }else if(postId){
+                posts = await postModel.find({_id: postId})
             }else{
                 posts= await postModel.find();
             }
