@@ -9,7 +9,7 @@ import Register from './pages/register/register';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-  const user = true;
+  const user = false;
   return (
     <Router>
       <TopBar />

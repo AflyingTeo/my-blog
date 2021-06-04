@@ -34,7 +34,7 @@ class PostController {
                     $in: [catname],
                 }})
             }else if(postId){
-                posts = await postModel.find({_id: postId})
+                posts = await postModel.findOne({_id: postId})
             }else{
                 posts= await postModel.find();
             }
