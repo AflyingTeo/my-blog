@@ -42,10 +42,10 @@
     cursor: pointer;
 }
 .write-img{
-    /* margin-left: 152px; */
+    margin-left: 152px;
     width: 80%;
     height: 250px;
     object-fit: cover;
-    background: black;
+    /* background: black; */
     border-radius: 24px;
 }

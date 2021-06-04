@@ -8,7 +8,7 @@
 .singlepost-img{
     width: 100%;
     height: 300px;
-    background: black;
+    /* background: black; */
     object-fit: cover;
 }
 .singlepost-title{

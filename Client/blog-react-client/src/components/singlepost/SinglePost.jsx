@@ -22,7 +22,7 @@ export default function SinglePost() {
         <div className="singlepost">
             <div className="singlepost-wrapper">
                 <img className="singlepost-img"
-                    src=""
+                    src={`http://localhost:5000/images/${singlePost.photo}`}
                     alt="" />
                 <h1 className="singlepost-title">
                     {singlePost.tittle}

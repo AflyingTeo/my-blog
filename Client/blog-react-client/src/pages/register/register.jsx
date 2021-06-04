@@ -42,6 +42,7 @@ export default function Register() {
                     type="password"
                     placeholder="Enter Your Pass Word!!!"
                     onChange={e => setPassword(e.target.value)} />
+                {err && <span className="error">Some thing went wrong!!!!!</span>}
                 <button className="register-btn">Register</button>
             </form>
             <button
@@ -49,7 +50,6 @@ export default function Register() {
                 type="submit">
                 <Link className="link" to="/login">Login Here</Link>
             </button>
-            {err && <span className="error">Some thing went wrong!!!!!</span>}
         </div>
     )
 }

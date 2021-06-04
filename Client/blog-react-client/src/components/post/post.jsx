@@ -3,16 +3,17 @@ import './post.css';
 import { Link } from 'react-router-dom';
 
 export default function post({ post }) {
-    console.log(post)
-    const {tittle, desc, createdAt, categories, _id} = post;
+    // console.log(post)
+    const { tittle, desc, createdAt, photo, categories, _id } = post;
+    const publicFile = "http://localhost:5000/images/"
     return (
         <div className="post">
             <img className="post-img"
-                src=""
+                src={publicFile + photo}
                 alt="" />
             <div className="post-info">
                 <div className="post-cats">
-                    {categories.map(cat =>(
+                    {categories.map(cat => (
                         <span className="post-cat">cat.name</span>
                     ))}
                 </div>

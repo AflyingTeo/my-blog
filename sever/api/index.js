@@ -16,6 +16,8 @@ const db = require('./config/db');
 //Connect to Database
 db.connect();
 
+app.use(express.static('public'));
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images")
