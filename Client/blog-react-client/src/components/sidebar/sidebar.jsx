@@ -17,7 +17,9 @@ export default function Sidebar() {
         <div className="sidebar">
             <div className="sidebar-item">
                 <span className="sidebar-title">ABOUT ME</span>
-                <img className="sidebar-img" src="" alt="" />
+                <img className="sidebar-img" 
+                    src="http://localhost:5000/images/aboutme.jpg" 
+                    alt="" />
                 <p>Hello</p>
             </div>
             <div className="sidebar-item">

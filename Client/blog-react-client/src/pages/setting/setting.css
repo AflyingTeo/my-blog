@@ -18,6 +18,7 @@
     font-size: 12px;
     margin-bottom: 16px;
     color: lightcoral;
+    cursor: pointer;
 }
 .setting-form{
     display: flex;
@@ -72,4 +73,10 @@
     padding: 14px;
     margin-top: 14px;
     cursor: pointer;
+}
+.update-succes{
+    color: red;
+    font-size: 24px;
+    margin: 12px;
+    text-align: center;
 }

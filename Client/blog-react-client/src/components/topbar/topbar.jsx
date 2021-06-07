@@ -4,9 +4,9 @@ import { Context } from '../../context/Context';
 import './topbar.css';
 
 export default function Topbar() {
-    const {user, dispatch} = useContext(Context);
-    const logoutHandler = (e) =>{
-        dispatch({type: "LOGOUT"});
+    const { user, dispatch } = useContext(Context);
+    const logoutHandler = (e) => {
+        dispatch({ type: "LOGOUT" });
     }
     return (
         <div className="top">
@@ -30,7 +30,7 @@ export default function Topbar() {
                     <li className="top-list--item">
                         <Link className="link" to="/write">WRITE</Link>
                     </li>
-                    <li 
+                    <li
                         className="top-list--item"
                         onClick={logoutHandler}>
                         {user && "LOGOUT"}
@@ -38,23 +38,27 @@ export default function Topbar() {
                 </ul>
             </div>
             <div className="top-right">
-                {user ? (<img className="top-img" 
-                                src="" 
-                                alt="" />) :
+
+                {user ? (
+                    <Link className="link" to="/setting">
+                        <img className="top-img" 
+                                    src={`http://localhost:5000/images/${user.profilePic}`} 
+                                    alt="" />
+                    </Link>) :
                     (
-                        <>
-                            <ul className="top-list">
-                                <li className="top-list--item">
-                                    <Link className="link" to="/login">LOGIN</Link>
-                                </li>
-                                <li className="top-list--item">
-                                    <Link className="link" to="/register">REGISTER</Link>
-                                </li>
-                            </ul>
-                        </>)
+            <>
+                <ul className="top-list">
+                    <li className="top-list--item">
+                        <Link className="link" to="/login">LOGIN</Link>
+                    </li>
+                    <li className="top-list--item">
+                        <Link className="link" to="/register">REGISTER</Link>
+                    </li>
+                </ul>
+            </>)
                 }
-                <i className="top-icon fas fa-search"></i>
-            </div>
+            <i className="top-icon fas fa-search"></i>
         </div>
+        </div >
     )
 }

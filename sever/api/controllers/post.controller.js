@@ -73,7 +73,7 @@ class PostController {
 
     async postDelete(req, res, next) {
         try {
-            const post = postModel.findById(req.params.id);
+            const post = await postModel.findById(req.params.id);
             if (post.username === req.body.username) {
                 try {
                     await post.delete();

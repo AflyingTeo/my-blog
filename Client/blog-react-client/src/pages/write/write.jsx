@@ -14,9 +14,9 @@ export default function Write() {
     const writeSubmitHandler = async (e) => {
         e.preventDefault();
         const newPost = {
+            username: user.username,
             desc: desc,
             tittle: tittle,
-            username: user.username,
         }
         if (file) {
             const data = new FormData();

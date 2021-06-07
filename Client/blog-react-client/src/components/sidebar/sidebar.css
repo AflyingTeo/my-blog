@@ -24,6 +24,7 @@
     width: 80%;
     height: 250px;
     background: black;
+    border-radius: 50%;
 }
 .sidebar-item > p{
     padding: 24px;

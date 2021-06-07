@@ -42,9 +42,9 @@ class UserController {
 
     //[DELETE] /:id
     async userDelete(req, res, next) {
-        if (req.body.userId === req.params.id) {
-            try {
-                const user = UserModel.findById(req.params.id);
+        try {
+            const user = await UserModel.findById(req.params.id);
+            if (req.body.userId == user._id) {
                 try {
                     await PostsModel.deleteMany({ username: user.username, });
                     await UserModel.findByIdAndDelete(req.params.id);
@@ -52,13 +52,13 @@ class UserController {
                 } catch (error) {
                     res.status(500).json(err);
                 }
-            } catch (error) {
-                res.status(400).json("User not found!!!");
-            }
 
-        }
-        else {
-            res.status(400).json("You can delete only one your account!!")
+            }
+            else {
+                res.status(400).json("You can delete only one your account!!")
+            }
+        } catch (error) {
+            res.status(400).json("User not found!!!");
         }
     }
 }
