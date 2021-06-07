@@ -11,9 +11,9 @@ class PostController {
             res.status(500).json(error)
         }
     }
-    async postSingleGet(req, res, next){
+    async postSingleGet(req, res, next) {
         try {
-            const singlePost = await postModel.findOne({_id: req.params.id})
+            const singlePost = await postModel.findOne({ _id: req.params.id })
             res.status(200).json(singlePost);
         } catch (error) {
             res.status(500).json(error);
@@ -27,16 +27,18 @@ class PostController {
 
         try {
             let posts;
-            if(username){
-                posts = await postModel.find({username});
-            }else if(catname){
-                posts = await postModel.find({categories: {
-                    $in: [catname],
-                }})
-            }else if(postId){
-                posts = await postModel.findOne({_id: postId})
-            }else{
-                posts= await postModel.find();
+            if (username) {
+                posts = await postModel.find({ username });
+            } else if (catname) {
+                posts = await postModel.find({
+                    categories: {
+                        $in: [catname],
+                    }
+                })
+            } else if (postId) {
+                posts = await postModel.findOne({ _id: postId })
+            } else {
+                posts = await postModel.find();
             }
             res.status(200).json(posts);
         } catch (error) {
@@ -70,22 +72,22 @@ class PostController {
     // [DELETE] /:id
 
     async postDelete(req, res, next) {
-        if (req.body.userId === req.params.id) {
-            try {
-                const post = postModel.findById(req.params.id);
+        try {
+            const post = postModel.findById(req.params.id);
+            if (post.username === req.body.username) {
                 try {
                     await post.delete();
                     res.status(200).json("Post has been deleted!!!");
                 } catch (error) {
                     res.status(500).json(err);
                 }
-            } catch (error) {
-                res.status(400).json("Post not found!!!");
+            }
+            else {
+                res.status(400).json("You can delete only one your account!!")
             }
 
-        }
-        else {
-            res.status(400).json("You can delete only one your account!!")
+        } catch (error) {
+            res.status(500).json("Post not found!!!");
         }
     }
 }
